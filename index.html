@@ -3,6 +3,7 @@
 <div class="grid-container">
     <header class="header">
         <div class="brand">
+         <button onclick="openMenu()">&#9776;</button>
             <a href="index.html">Black Steel Langley</a>
         </div>
         <div class="header-links">
@@ -22,17 +23,79 @@
         <header>
             Black Steel Langley
         </header>
-        <aside>
-            Shopping Categories
+        <aside class="sidebar">
+            <h3>Shopping Categories</h3>
+            <button class="sidebar-close-button" onclick="closeMenu()">x</button>
+            <ul>
+                <li>
+                    <a href="index.html">Wood</a>
+                </li>
+                
+                <li>
+                    <a href="index.html">Nails</a>
+                </li>
+            </ul>
         </aside>
         <main>
-            <ul>
-                <li>Product 1</li>
-                <li>Product 2</li>
-                <li>Product 3</li>
-                <li>Product 4</li>
-                <li>Product 5</li>
-            </ul>
+            <div class="content">
+                <ul class="products">
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="images/d1.jpg" alt="product" />
+                            <div class="product-name">
+                                <a href="product.html">Wood</a>
+                            </div>
+                            <div class="product-brand">Lumber Guys</div>
+                            <div class="product-price">$452.40</div>
+                            <div class="product-rating">4.5 Stars (10 review)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="images/d1.jpg" alt="product" />
+                            <div class="product-name">
+                                <a href="product.html">Wood</a>
+                            </div>
+                            <div class="product-brand">Lumber Guys</div>
+                            <div class="product-price">$452.40</div>
+                            <div class="product-rating">4.5 Stars (10 review)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="images/d1.jpg" alt="product" />
+                            <div class="product-name">
+                                <a href="product.html">Wood</a>
+                            </div>
+                            <div class="product-brand">Lumber Guys</div>
+                            <div class="product-price">$452.40</div>
+                            <div class="product-rating">4.5 Stars (10 review)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="images/d1.jpg" alt="product" />
+                            <div class="product-name">
+                                <a href="product.html">Wood</a>
+                            </div>
+                            <div class="product-brand">Lumber Guys</div>
+                            <div class="product-price">$452.40</div>
+                            <div class="product-rating">4.5 Stars (10 review)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="images/d1.jpg" alt="product" />
+                            <div class="product-name">
+                                <a href="product.html">Wood</a>
+                            </div>
+                            <div class="product-brand">Lumber Guys</div>
+                            <div class="product-price">$452.40</div>
+                            <div class="product-rating">4.5 Stars (10 review)</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </main>
         <footer>
             &copy; 2023 Black Steel Langley
@@ -41,6 +104,14 @@
     
 </body>
 </div>
+<script>
+    function openMenu() {
+       document.querySelector(".sidebar").classList.add("open");
+    }
+    function closeMenu() {
+        document.querySelector(".sidebar").classList.remove("open");
+    }
+</script>
 </html>
 
 <!-- for the commit -->
