@@ -18,6 +18,8 @@ function App() {
   return (
     <Router>
         <div className="grid-container">
+            <link rel="stylesheet" href="style.css" />
+            <title>Black Steel Langley</title>
                 <header className="header">
                     <div className="brand">
                         <button onClick={openMenu}>&#9776;</button>
