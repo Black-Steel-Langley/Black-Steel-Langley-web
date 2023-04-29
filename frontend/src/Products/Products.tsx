@@ -1,9 +1,34 @@
-import data from "./data";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+type Product = {
+    id: number;
+    name: string;
+    description: string;
+    brand: string;
+    price: number;
+    rating: number;
+    numberOfReview: number;
+    imageUrl: string;
+}
+
+const emptyProducts: Product[] = [];
 function Products() {
+    const [products, setProducts]: [Product[], (products: Product[]) => void]
+     = useState(emptyProducts);
+     useEffect(() => {
+        axios.get<Product[]>("https://localhost:7250/catalog",
+        {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+        .then((response) => setProducts(response.data))
+        .catch((error) => console.log(error));
+     }, []);
     return (
         <div className="content">
             <ul className="products"></ul>
-                {data.products.map((product) => (
+                {products.map((product) => (
                     <li>
                         <div className="product">
                             <img
@@ -17,7 +42,7 @@ function Products() {
                             <div className="product-brand">{product.brand}</div>
                             <div className="product-price">{product.price}</div>
                             <div className="product-rating">
-                                {product.rating} Stars ({product.numberOfReviews} reviews)
+                                {product.rating} Stars ({product.numberOfReview} reviews)
                             </div>
                         </div>
                     </li>
